@@ -1,17 +1,13 @@
-enum Theme {
-  Light = "light-theme",
-  Dark = "dark-theme",
-  System = "system-theme"
+type CardSuitUnion = "clubs" | "diamonds" | "hearts" | "spades";
+
+function displaySuitUnion(suit: CardSuitUnion): string {
+  switch (suit) {
+    case "clubs": return "♣";
+    case "diamonds": return "♦";
+    case "hearts": return "♥";
+    case "spades": return "♠";
+  }
 }
 
-function applyTheme(theme: Theme): void {
-  const className = theme;
-  console.log(`Theme applied: ${className}`);
-}
-
-applyTheme(Theme.Dark);
-// applyTheme("light-theme"); // ❌ 
-
-console.log(Theme.Dark); // "dark-theme"
-console.log(Theme.System); // "system-theme"
-console.log(Theme.Light); // "light-theme"
+console.log(displaySuitUnion("hearts"));
+// console.log(displaySuitUnion("joker")); // ❌
